@@ -54,3 +54,27 @@ Webpack is a module bundler(Webpack 实质是一个模块打包工具)
 > 因为 Webpack 是一个模块打包工具，所以能够识别任何模块引入语法
 
 > 最早的时候，webpack 是一个 js 的模块打包工具 -> 现在可以打包任何形式的模块了(比如 css 文件, less 文件, png 图片文件~)
+
+##### 搭配 Webpack 环境
+
+原来 Webpack 是基于 nodejs 开发的模块打包工具，所以需要安装 nodejs~ 这个我们早就安好了
+node官网安装： 选择LTS 而不是 Current。 因为LTS 是稳定的最新版本。 Current是最新的测试版本
+
+
+提高 webpack 打包速度有两个非常重要的点：
+
+1. 保持 nodejs 版本尽量新
+2. 保持 webpack 的版本尽量新
+
+---
+如果在终端输入  npm -v 和 node -v 都有对应的版本号，说明node、npm安装已成功
+
+安装：
+1. npm init  (注意：npm是node的包管理工具，可以帮助我们以node规范的方式创建一个项目或创建一个规范的node的包文件， 所以要想用webpack去管理项目,首先要让项目符合node的规范，用npm init 初始项目的时候，这个项目就会符合node的规范, 生成一个package.json 文件)  
+2. webpack 安装(两种方式):
+  1. 全局安装    npm install webpack webpack-cli -g (我的电脑要加一个sudo)   查看webpack 和 webpack-cli版本： webpack -v    (全局安装：不推荐使用    问题： 如果两个项目都要webpack打包，但是一个项目要的是webpack4 一个项目是webpack5打包，这就难受了~)
+
+  卸载全局的webpack的方法： npm uninstall webpack webpack-cli -g (加一个sudo)
+
+  2. 项目内安装webpack  进入需要安装webpack的项目根目录里。然后运行代码：  npm install webpack webpack-cli --save-dev
+  (也可不写--save-dev 直接换成 -D 这两个是等价的)
