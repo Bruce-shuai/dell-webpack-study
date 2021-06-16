@@ -34,4 +34,23 @@ Webpack 出现之前，单纯的静态页面还好。只有简单的代码逻辑
 1. 终端： npx webpack 文件路径    // 通过webpack去翻译在script标签的js文件, 这里的npx 起到了一个什么样的作用呢？
 
 输入此npm并安装后，根目录多了一个dist文件夹，该文件夹里面多了一个main.js 文件~  该文件就是webpack帮助我们翻译好了的文件！！此时html的script标签引入的不再是原来的index.js 标签，而应该换成dist文件夹里的main.js 这个文件
+
+这样，浏览器就可以识别import  export这种ES module了
 ```
+
+##### Webpack 明确定义
+
+webpack 可不止我前面说的仅仅提供 ES module 翻译功能那么简单，下面将讲述 Webpack 的明确定义
+
+Webpack 其实就不算一个翻译器。很多 ES 高版本的，浏览器无法解读的语法，webpack 实质也无法识别
+
+Webpack is a module bundler(Webpack 实质是一个模块打包工具)
+是一个能把各种模块打包到一起的工具
+
+> 比如：上文提到的，import 其实也是导入一个模块~ 然后将各种 import 导入的模块打包~
+
+> 其实在我们写 ES 代码的时候，不仅仅有 ES Module 这种模块规范, 还有 CommonJS 模块规范(这是 nodejs 喜欢用的模块规范，怪说不得，我学 nodejs 全用的 require...，有一个问题是，如果在前端代码中写 CommonJS,应该也是没有问题的吧？！)还有 CMD、AMD 这种模块规范
+
+> 因为 Webpack 是一个模块打包工具，所以能够识别任何模块引入语法
+
+> 最早的时候，webpack 是一个 js 的模块打包工具 -> 现在可以打包任何形式的模块了(比如 css 文件, less 文件, png 图片文件~)
