@@ -77,4 +77,40 @@ node官网安装： 选择LTS 而不是 Current。 因为LTS 是稳定的最新�
   卸载全局的webpack的方法： npm uninstall webpack webpack-cli -g (加一个sudo)
 
   2. 项目内安装webpack  进入需要安装webpack的项目根目录里。然后运行代码：  npm install webpack webpack-cli --save-dev
-  (也可不写--save-dev 直接换成 -D 这两个是等价的)
+  (也可不写--save-dev 直接换成 -D 这两个是等价的) 这时候在终端输入 webpack -v 是找不到webpack的，因为我们输入webpack这个命令的时候，node会在全局模块中找webpack，但是这时候我们的webpack并没有安装在全局。而是安装在项目内。  但是node提供了一个命令叫npx 我们通过： npx webpack -v 可以看见webpack 和 webpack-cli 版本      npx会帮助我们在当前项目的目录的node_modules文件夹里帮助我们找webpack安装包
+
+如何看一个包的版本号是否存在(查看包的历史版本~)？  可以在终端输入： npm info webpack
+
+
+> npx 和 npm 二者的关系：npx 会到当前文件夹下的node_modules下找命令，而npm只会到全局去找命令
+
+##### 使用Webpack的配置文件
+
+各种文件(比如js文件和图片文件)的打包流程是不一样的
+
+现在的webpack有很多的默认配置文件。
+
+如果你想在webpack中编写webpack的配置文件。  
+webpack的默认配置文件： webpack.config.js   所以自己可以创建这个文件来自己编写配置
+
+```
+webpack.config.js：
+/* CommendJS 语法 */
+module.exports = {   // 这是一个对象
+// 这些配置都是webpack给我们提供的配置接口
+  entry: './index.js',        // 项目要做打包，这里是指的项目从哪一个文件进行打包(这里我弄的是study1 文件夹里的配置)  
+  output: {  // 对象
+    filename: 'bundel.js', 打包好的文件的命名
+    path: path.resolve(__dirname, 'bundle')      // 这里指的是打包的文件我要放置到哪一个文件夹下(path后面要跟一个绝对路径, 这里要引入node的一个核心模块
+    const path = require('path');
+    然后调用path的resolve方法。把__dirname 这个node里的变量，和bundle(文件夹名)做一个结合，就是bundle.js的绝对路径了
+    )
+  }
+}
+```
+
+输入 npx  webpack 看看是否生成了想要的打包文件  
+
+如果运行正确的话： 会有一个bundle文件夹生成，以及文件夹里有个bundle.js文件(被压缩了的)
+
+如果不想用webpack.config.js 命名webpack的配置文件。而是用其他名字，那么打包的时候要注意应该输入的不是 npx webpack 而是 npx webpack --config webpackconfig.js
