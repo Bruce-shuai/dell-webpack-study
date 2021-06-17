@@ -114,3 +114,90 @@ module.exports = {   // 这是一个对象
 如果运行正确的话： 会有一个bundle文件夹生成，以及文件夹里有个bundle.js文件(被压缩了的)
 
 如果不想用webpack.config.js 命名webpack的配置文件。而是用其他名字，那么打包的时候要注意应该输入的不是 npx webpack 而是 npx webpack --config webpackconfig.js
+
+
+---
+
+>使用npx script 简化 打包代码~
+
+```
+1. 在package.json文件里，scripts 配置内容：
+"script": {
+  "bundle": "webpack"
+}
+这句话的意思是，当你执行bundle这个命令的时候，就会自动去执行webpack这个命令   因此，就可以不再使用 npx webpack 这个指令来打包了，而是使用 npx run bundle 来执行同样的操作
+
+原理： 当运行npm run bundle的时候，实质是在运行package.json里面的bundle命令 (scripts 里的内容会先去对应文件夹下的node_modules找是否安装了webpack)
+```
+
+
+注意：
+如果是全局安装webpack
+
+运行webpack打包的指令： webpack + 文件名
+
+如果是在项目里安装webpack
+
+运行webpack打包的指令： npx wenpack + 文件名
+
+(如果在package.json 文件里的scipt 做了一些操作的话)
+
+运行webpack打包的指令： npm run ...
+
+```
+小总结：
+webpack 做打包的时候其实并不知道该如何打包~ 需要配置文件(webpack.config.json)来辅助它打包。如果你不写webpack.config.json 其实webpack也有自己的一套默认配置方案，只是功能少，如果不写自己的配置，就会使用默认配置。 所以根据工程需求，我们要配置专属的功能
+
+const path = require('path');
+
+module.exports = {
+  entry: '....',   // 项目打包的入口文件
+  output: {
+    filename: '....', // 打包出的最终运行文件
+    path: path.resolve(__dirname, '文件夹名') // 绝对路径(其实不写也可以，因为webpack有个默认的path配置项)
+  } 
+}
+```
+
+##### webpack-cli的作用
+
+使我们能在命令行里正确使用webpack命令，如果没安装webpack-cli，那么我们就无法在命令行里使用webpack或npx webpack这样的指令
+
+
+##### 浅谈Webpack打包知识点
+
+npm run bundle 后，终端显示的内容如下：
+Hash: ....   // 哈希值，代表本次打包的唯一哈希值
+Version: webpack 版本
+
+
+webpack默认 mode 配置: production  
+mode: 'production'  这样打包的代码会被压缩~
+
+mode: 'development'  这种打包，代码是不会被压缩的
+
+##### Loader 是什么？
+
+当你去打包一个模块的时候(比如打包png文件，应该有什么配置，就应该像下面这样来写~)
+
+注意： 在默认配置下，webpack是能够打包js文件的
+
+例如： 
+module.exports = {
+  module: {
+    rules: [{           // 规则
+      test: /\.jpg$/,   // 这是以jpg结尾的文件
+      use: {            // 打包方式
+        loader: 'file-loader' // 要安装该loader(npm install file-loader -D)
+      }
+    }]
+  }
+}
+
+file-loader 底层帮助我们做了以下几件事
+1. 首先会帮我们打包，移动到dist文件夹下
+2. 文件地址返回到变量
+
+> loader是什么？
+
+loader 其实就是一个打包的方案，它知道对于一个特定的文件(比如ong文件、css文件...)，webpack应该如何去打包
