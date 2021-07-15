@@ -14,6 +14,20 @@ module.exports = {
           limit: 2048             // 表示如果图片的字节小于2048的话，会以Base64的格式放到bundke.js 文件里
         }
       }
+    }, {
+      test: /\.scss$/,   // 正则表达式
+      use: [
+        'style-loader', 
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            modules: true
+          }
+        }, 
+        'postcss-loader',
+        'sass-loader',
+      ]
     }]
   },
   output: {

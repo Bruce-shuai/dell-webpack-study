@@ -1,15 +1,13 @@
-import Header from './header';
-import Sidebar from './sidebar';
-import Content from './content';
-import Avatar from './avatar.jpg';
+import avatar from './avatar.jpg';
 
+// 引入了css模块化的概念，表示css只在这一个模块里有效
+import style from './index.scss';
+import createAvatar from './createAvatar'; 
 
-new Header();
-new Sidebar();
-new Content();
-
-var img = new Image();   // 这个用法之前学js的时候也没见过啊~
-img.src = Avatar;
+createAvatar();
+var img = new Image();
+img.src = avatar;
+img.classList.add(style.avatar);
 
 var root = document.getElementById('root');
-root.append(img)
+root.append(img);
