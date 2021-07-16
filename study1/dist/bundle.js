@@ -16,7 +16,7 @@
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"960f5c837e51504eda2427f429a8119e.png\");\n\n//# sourceURL=webpack://study1/./src/img.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/img_960f5c837e51504eda2427f429a8119e.png\");\n\n//# sourceURL=webpack://study1/./src/img.png?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _img_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img.png */ \"./src/img.png\");\n\n\nvar img = new Image();  // 这里是创建了一个img 标签\nimg.src = _img_png__WEBPACK_IMPORTED_MODULE_0__.default;\n\nvar root = document.getElementById('root');\nroot.append(img);\n\n//# sourceURL=webpack://study1/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _img_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img.png */ \"./src/img.png\");\n\n\nvar img = new Image();  // 这里是创建了一个img 标签\nimg.src = _img_png__WEBPACK_IMPORTED_MODULE_0__.default;\n\nvar root = document.getElementById('root');\n// 这里的js api 应该要好好学学才行\nroot.append(img);\n\n//# sourceURL=webpack://study1/./src/index.js?");
 
 /***/ })
 
