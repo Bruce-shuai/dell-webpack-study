@@ -1,13 +1,8 @@
-import avatar from './avatar.jpg';
+import fenjing from './img.png';
 
-// 引入了css模块化的概念，表示css只在这一个模块里有效
-import style from './index.scss';
-import createAvatar from './createAvatar'; 
-
-createAvatar();
-var img = new Image();
-img.src = avatar;
-img.classList.add(style.avatar);
+var img = new Image();  // 这里是创建了一个img 标签
+img.src = fenjing;
 
 var root = document.getElementById('root');
+// 这里的js api 应该要好好学学才行
 root.append(img);
