@@ -9,12 +9,14 @@ module.exports = {
     rules: [{
       test: /\.(jpg|png|gif)$/,
       use: {
-        loader: 'file-loader',
-        options: { // 补充一些额外的参数
-          // placeholder 占位符
-          name: '[name]_[hash].[ext]',   // 表示打包后的文件名字及后缀保持不变(注意不要忘记写单引号)
-          outputPath: 'images/'          // 将打包的文件放进限定的文件夹
+        loader: 'url-loader',
+        options: { 
+          // 使用了url-loader后，图片没有被打包到dist目录下(而是将图片转为Base64的代码放到打包后的js文件里)
+          name: '[name]_[hash].[ext]',   
+          outputPath: 'images/',
+          limit: 204800    
         }
+        // 小图片用url-loader 转化为 Base64 节省 网络请求发送次数
       }
     }]
   },
