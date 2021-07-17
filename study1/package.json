@@ -22,14 +22,19 @@
     "node-sass": "^6.0.1",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.1",
+    "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.1.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.39.0",
+    "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^3.11.2"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],  
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "react": "^17.0.2",

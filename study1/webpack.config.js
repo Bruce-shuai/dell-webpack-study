@@ -19,8 +19,13 @@ module.exports = {
         // 小图片用url-loader 转化为 Base64 节省 网络请求发送次数
       }
     }, {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      test: /\.scss$/,
+      use: [
+        'style-loader', 
+        'css-loader', 
+        'postcss-loader',
+        'sass-loader'
+      ]
     }]
   },
   output: {

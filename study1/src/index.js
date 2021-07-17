@@ -1,5 +1,5 @@
 import fenjing from './img.png';
-import './index.css';
+import './index.scss';
 
 var img = new Image();  // 这里是创建了一个img 标签
 img.src = fenjing;
