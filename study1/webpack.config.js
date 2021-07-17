@@ -6,7 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js'
+    main: './src/index.js',
+    sub: './src/index.js'
   },
   module: {
     rules: [{
@@ -43,7 +44,8 @@ module.exports = {
     }]
   },
   output: {
-    filename: 'bundle.js',
+    // [name] 作为占位符
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   }, plugins: [new HtmlWebpackPlugin({
