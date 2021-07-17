@@ -9,6 +9,10 @@ module.exports = {
   entry: {
     main: './src/index.js'
   },
+  devServer: {
+    contentBase: './dist',   // 启用一个服务器
+    open: true
+  },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,

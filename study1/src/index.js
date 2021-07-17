@@ -1,12 +1,5 @@
-console.log('hello world !  bruce');
+console.log('hello bruce');
 
-// sourceMap
-
-// 浏览器知道dist 目录下main.js文件96行出错
-// sourceMap 它是一个映射关系，他知道dist目录下main.js文件96 实际上
-// 对应的是src目录下index.js文件中的第一行
-
-
-// 最佳devtool 开发实践：
-// development(开发环境): eval-cheap-module-source-map
-// production(上线环境): cheap-module-source-map
+// 开服务器的效果： ajax请求需要在一个服务器上来使用
+// Dev Server 是一个http网址
+// React 脚手架也是使用了 webpack devServer
