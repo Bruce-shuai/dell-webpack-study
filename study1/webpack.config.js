@@ -44,6 +44,8 @@ module.exports = {
     }]
   },
   output: {
+    // 这是配置打包后文件自动增加cdn域名地址
+    publicPath: 'http://cdn.com.cn',  
     // [name] 作为占位符
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
