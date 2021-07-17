@@ -43,7 +43,7 @@ module.exports = {
     }]
   },
   output: {
-    filename: 'dist.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   }, plugins: [new HtmlWebpackPlugin({
