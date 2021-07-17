@@ -16,7 +16,7 @@
   \***************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body ._1V9y6zR5d4hEN_Gwz6mnrp {\\n  width: 150px;\\n  height: 150px;\\n  -webkit-transform: translate(100px, 100px);\\n          transform: translate(100px, 100px);\\n}\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"fengjing\": \"_1V9y6zR5d4hEN_Gwz6mnrp\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://study1/./src/index.scss?./node_modules/css-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B1%5D.use%5B1%5D!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _font_iconfont_woff2_t_1626488959773__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./font/iconfont.woff2?t=1626488959773 */ \"./src/font/iconfont.woff2?t=1626488959773\");\n/* harmony import */ var _font_iconfont_woff_t_1626488959773__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./font/iconfont.woff?t=1626488959773 */ \"./src/font/iconfont.woff?t=1626488959773\");\n/* harmony import */ var _font_iconfont_ttf_t_1626488959773__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./font/iconfont.ttf?t=1626488959773 */ \"./src/font/iconfont.ttf?t=1626488959773\");\n// Imports\n\n\n\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_woff2_t_1626488959773__WEBPACK_IMPORTED_MODULE_2__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_woff_t_1626488959773__WEBPACK_IMPORTED_MODULE_3__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_ttf_t_1626488959773__WEBPACK_IMPORTED_MODULE_4__.default);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"@charset \\\"UTF-8\\\";\\n@font-face {\\n  font-family: \\\"iconfont\\\";\\n  /* Project id 2677945 */\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \") format(\\\"woff\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \") format(\\\"truetype\\\");\\n}\\n.iconfont {\\n  font-family: \\\"iconfont\\\" !important;\\n  font-size: 16px;\\n  font-style: normal;\\n  -webkit-font-smoothing: antialiased;\\n  -moz-osx-font-smoothing: grayscale;\\n}\\n\\n.icon-Building-:before {\\n  content: \\\"\\\";\\n}\\n\\n.icon-Building-1:before {\\n  content: \\\"\\\";\\n}\\n\\n.icon-biaoqian:before {\\n  content: \\\"\\\";\\n}\\n\\n.icon-lipin:before {\\n  content: \\\"\\\";\\n}\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://study1/./src/index.scss?./node_modules/css-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B1%5D.use%5B1%5D!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -27,6 +27,46 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module) {
 
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (cssWithMappingToString) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join(\"\");\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === \"string\") {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, \"\"]];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\n//# sourceURL=webpack://study1/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ (function(module) {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== \"string\") {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack://study1/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.ttf?t=1626488959773":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.ttf?t=1626488959773 ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"d446bb7e54be3f57d708afdfc394a872.ttf\");\n\n//# sourceURL=webpack://study1/./src/font/iconfont.ttf?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.woff2?t=1626488959773":
+/*!*************************************************!*\
+  !*** ./src/font/iconfont.woff2?t=1626488959773 ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"fe1b08c5b6e35b3a815ae346231c66dc.woff2\");\n\n//# sourceURL=webpack://study1/./src/font/iconfont.woff2?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.woff?t=1626488959773":
+/*!************************************************!*\
+  !*** ./src/font/iconfont.woff?t=1626488959773 ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"40bf6f139ed86f1bf6caa236a1d860d0.woff\");\n\n//# sourceURL=webpack://study1/./src/font/iconfont.woff?");
 
 /***/ }),
 
@@ -100,33 +140,13 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
-/***/ "./src/img.png":
-/*!*********************!*\
-  !*** ./src/img.png ***!
-  \*********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/img_960f5c837e51504eda2427f429a8119e.png\");\n\n//# sourceURL=webpack://study1/./src/img.png?");
-
-/***/ }),
-
-/***/ "./src/createImg.js":
-/*!**************************!*\
-  !*** ./src/createImg.js ***!
-  \**************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _img_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img.png */ \"./src/img.png\");\n\n\nfunction createImg() {\n  var img = new Image(); \n  img.src = _img_png__WEBPACK_IMPORTED_MODULE_0__.default;\n  img.classList.add('fengjing');\n  var root = document.getElementById('root');\n  root.append(img);\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (createImg);\n\n//# sourceURL=webpack://study1/./src/createImg.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _img_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img.png */ \"./src/img.png\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _createImg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createImg */ \"./src/createImg.js\");\n\n// import './index.scss';   // 这种引入scss文件的方法 会影响全局的样式\n// 因此，引入css模块化的概念  表示css只在指定的模块内有效。 写法如下\n\n\n\n(0,_createImg__WEBPACK_IMPORTED_MODULE_2__.default)();\nvar img = new Image();  // 这里是创建了一个img 标签\nimg.src = _img_png__WEBPACK_IMPORTED_MODULE_0__.default;\n// css moudle 的 使用方式如下\nimg.classList.add(_index_scss__WEBPACK_IMPORTED_MODULE_1__.default.fengjing);\nvar root = document.getElementById('root');\n// 这里的js api 应该要好好学学才行\nroot.append(img);\n\n//# sourceURL=webpack://study1/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\nvar root = document.getElementById('root');\n\n// innerHTML 写法可以防止标签被转义\nroot.innerHTML = '<div class=\"iconfont icon-Building-\">abc</div>';\n\n//# sourceURL=webpack://study1/./src/index.js?");
 
 /***/ })
 

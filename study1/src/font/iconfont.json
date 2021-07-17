@@ -1,0 +1,37 @@
+{
+  "id": "2677945",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5421001",
+      "name": "Building-02",
+      "font_class": "Building-",
+      "unicode": "e77a",
+      "unicode_decimal": 59258
+    },
+    {
+      "icon_id": "5421002",
+      "name": "Building-01",
+      "font_class": "Building-1",
+      "unicode": "e77b",
+      "unicode_decimal": 59259
+    },
+    {
+      "icon_id": "22224033",
+      "name": "标签",
+      "font_class": "biaoqian",
+      "unicode": "f674",
+      "unicode_decimal": 63092
+    },
+    {
+      "icon_id": "22224037",
+      "name": "礼品",
+      "font_class": "lipin",
+      "unicode": "f676",
+      "unicode_decimal": 63094
+    }
+  ]
+}
