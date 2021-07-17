@@ -1,4 +1,12 @@
-var root = document.getElementById('root');
-import './index.scss';
-// innerHTML 写法可以防止标签被转义
-root.innerHTML = '<div class="iconfont icon-Building-">&#xe77b;</div>';
+consele.log('hello world');
+
+// sourceMap
+
+// 浏览器知道dist 目录下main.js文件96行出错
+// sourceMap 它是一个映射关系，他知道dist目录下main.js文件96 实际上
+// 对应的是src目录下index.js文件中的第一行
+
+
+// 最佳devtool 开发实践：
+// development(开发环境): eval-cheap-module-source-map
+// production(上线环境): cheap-module-source-map

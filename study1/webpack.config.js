@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-cheap-module-source-map',
   entry: {
-    main: './src/index.js',
-    sub: './src/index.js'
+    main: './src/index.js'
   },
   module: {
     rules: [{
@@ -29,8 +29,7 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
-            importLoaders: 2,  // 这样就保证了即使在scss文件里再引用scss文件，同样会经历完整的执行scss相关loader的步骤
-            modules: true
+            importLoaders: 2
           }
         }, 
         'postcss-loader',
@@ -43,14 +42,12 @@ module.exports = {
       }
     }]
   },
-  output: {
-    // 这是配置打包后文件自动增加cdn域名地址
-    publicPath: 'http://cdn.com.cn',  
-    // [name] 作为占位符
+  output: {  
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
-  }, plugins: [new HtmlWebpackPlugin({
+  }, 
+  plugins: [new HtmlWebpackPlugin({
     template: 'src/index.html'
   })]
 }
