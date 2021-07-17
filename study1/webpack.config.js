@@ -25,7 +25,8 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
-            importLoaders: 2  // 这样就保证了即使在scss文件里再引用scss文件，同样会经历完整的执行scss相关loader的步骤
+            importLoaders: 2,  // 这样就保证了即使在scss文件里再引用scss文件，同样会经历完整的执行scss相关loader的步骤
+            modules: true      // 表示开启css模块化打包
           }
         }, 
         'postcss-loader',
