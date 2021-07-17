@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 这是webpack自带的一个插件
+const webpack = require('webpack')
 
-// plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情(类似React 生命周期函数)
 
 module.exports = {
   mode: 'development',
@@ -11,7 +12,9 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',   // 启用一个服务器
-    open: true
+    open: true,
+    hot: true
+    // hotOnly: true    // 表示即使热更新生效，也不让浏览器自动刷新
   },
   module: {
     rules: [{
@@ -39,7 +42,14 @@ module.exports = {
         'postcss-loader',
         'sass-loader'
       ]
-    },{
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader', 
+        'css-loader',
+        'postcss-loader'
+      ]
+    }, {
       test: /\.(ttf|woff|woff2)$/,
       use: {
         loader: 'file-loader',
@@ -51,7 +61,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true
   }, 
-  plugins: [new HtmlWebpackPlugin({
-    template: 'src/index.html'
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }

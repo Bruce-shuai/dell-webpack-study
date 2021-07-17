@@ -4,8 +4,7 @@
   "description": "",
   "private": "true",
   "scripts": {
-    "watch": "webpack --watch",
-    "start": "webpack server --open Safari"
+    "start": "webpack server --open"
   },
   "keywords": [],
   "author": "",
