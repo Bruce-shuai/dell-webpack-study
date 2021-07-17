@@ -1,4 +1,7 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情(类似React 生命周期函数)
 
 module.exports = {
   mode: 'development',
@@ -25,7 +28,7 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
-            importLoaders: 2  // 这样就保证了即使在scss文件里再引用scss文件，同样会经历完整的执行scss相关loader的步骤
+            importLoaders: 2,  // 这样就保证了即使在scss文件里再引用scss文件，同样会经历完整的执行scss相关loader的步骤
             modules: true
           }
         }, 
@@ -42,5 +45,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
-  }
+  }, plugins: [new HtmlWebpackPlugin({
+    template: 'src/index.html'
+  })]
 }
