@@ -12,7 +12,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',   // 启用一个服务器
-    open: true,
+    // open: true,
     hot: true
     // hotOnly: true    // 表示即使热更新生效，也不让浏览器自动刷新
   },
