@@ -1,3 +1,5 @@
+#### 前人的 webpack 笔记：https://github.com/Bruce-shuai/Nineteen-webpack?organization=Bruce-shuai&organization=Bruce-shuai#1
+
 ### Webpack 是什么？
 
 (在 Webpack 出现之前，我们写网页的方法 html 文件 --> 在 html 网页里增添样式 link 标签, 以及 js 文件 使用 script 标签)
@@ -205,7 +207,7 @@ mode: 'development' 这种打包，代码是不会被压缩的
 
 ##### Loader 是什么？
 
-当你去打包一个模块的时候(比如打包 png 文件，应该有什么配置，就应该像下面这样来写~)
+loader 就是一个打包的方案 当你去打包一个模块的时候(比如打包 png 文件，应该有什么配置，就应该像下面这样来写~)
 
 (注意： 在默认 Webpack 配置下，webpack 是知道如何打包 js 文件的，但是其他类型的文件就没办法知道了)
 
@@ -297,8 +299,61 @@ module: {
           name: '[name].[ext]',   // 打包生成的名字(包括后缀)和原来的名字一模一样
           outputPath: 'images/',
           // 下面这个操作要注意注意！(2048 表示图片的大小超过了2048个字节的话其实就2kb，就像file-loader一样打包，如果小于2kb，就用base64方法解决)
-          limit: 2048
+          limit: 2048   // 这个2048是任意写的，你可以写任何符合代码逻辑的2的整数倍的数字
         }
   }
 }
 ```
+
+#### 使用 Loader 打包静态资源（样式篇）
+
+css-loader 作用：帮助项目中分析出各个 css 文件的关系 并最后合并为一个大的 css 文件
+
+style-loader 作用：得到 css-loader 生成的 css 的内容后，会把这段内容挂载到 <head>标签上
+
+所以打包 css 文件，需要将 css-loader 和 style-loader 配合起来一起用
+
+##### 打包 sass 文件
+
+打包 sass 文件需要的 loader 依次有： style-loader、css-loader、sass-loader
+
+注意一个问题： loader 是一个从下到上 从右到左的执行顺序
+
+> 自动添加厂商前缀的功能(-webkit-)
+> 即： postcss-loader
+> 这个就和掘金小册(css 美学)那个 bruce 很类似了
+
+模块化 css。 模块之间的样式是没有任何的耦合的
+
+##### 如何使用 webpack 打包字体文件
+
+##### 使用 plugins 让打包更便捷
+
+(plugins 插件)
+
+HtmlWebpackPlugin 会在打包结束后，自动生成一个 html 文件，并把打包生成的 js 自动引入到这个 html 文件中
+
+plugin 可以在 webpack 运行到某个时刻的时候，帮你做一些事情(有点类似 react 的生命周期函数)
+
+#### Entry 与 Output 的基础配置
+
+#### 记住两个 SourceMap 的配置
+
+1. development 开发阶段时： 'cheap-module-eval-source-map'
+2. production 上线阶段： 'cheap-module-source-map'
+
+#### 使用 WebpackDevServer 提升开发效率
+
+注意：如果要想发送 ajax 请求，则必须要求所在页面(html 页面)要在一个服务器上通过 http 协议打开
+
+webpack devServer 支持跨域的代理
+
+可以在 node 里使用 webpack
+
+#### Hot Module Replacement 热更新
+
+#### 使用 Babel 处理 ES6 语法
+
+#### Webpack 在性能优化这个版块做实需要做很多东西才行
+
+#### 配置 React 代码的打包
