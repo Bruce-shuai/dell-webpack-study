@@ -12,15 +12,19 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    sub: './src/index2.js'
+  },
   output: {
-    filename: 'main.js',
+    // 这让所有文件的文件名前都对应有cdn地址  具体内容 看看文档的output部分
+    publicPath: 'http://cdn.com.cn',
+    // 对于多入口文件，最后打包出的文件，这里可以通过placeholder来控制打包出来的文件名是什么
+    filename: '[name]_[hash].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: '[name].[ext]'
   },
-  // htmlWebpackPlugin 会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
   plugins: [new HtmlWebpackPlugin({
-    // 可以自定义一个html的模板，方便自动生成的html文件具备模板提供的格式
     template: 'src/template-html.html'
   }), new CleanWebpackPlugin()],
   module: {

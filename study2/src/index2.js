@@ -1,0 +1,1 @@
+console.log('test index2.js');
