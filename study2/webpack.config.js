@@ -1,26 +1,31 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
-// webpack中 plugin 的作用：
-// plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
-// plugin 就非常像react的生命周期函数
 
-// 打包新的文件前，自动把原来打包的文件删除 
-// CleanWebpackPlugin(非官方提供的plugin)
-// 安装方法：  npm install clean-webpack-plugin -D
-// 插件官网：https://github.com/johnagan/clean-webpack-plugin
-
+// sourceMap  指定具体是哪个文件的哪个位置出错。
+// sourceMap 它是一个映射关系，他知道dist目录下js文件哪行出错所对应的src目录的js文件哪一行出错
+// 通过devtool 来具体设置source-map的映射方法
 module.exports = {
+  // 在开发者模式下(development)，sourceMap是已经被默认使用了的。devtool: 'source-map' 启动source-map
   mode: 'development',
+  // 这里的devtool 可以配置各种操作，具体方法可看webpack的devtool这一节的内容
+  // devtool: 'source-map',
+  // cheap 只会告诉你是哪一行出错，不会告诉你是哪一行的哪一列出错，相对更加节省性能
+  // module 不仅会管自己的业务代码哪里出错，如果你下载了第三方模块例如:lodash 它也会给你纠错lodash里的内容
+  // eval 是打包速度最快的模式，通过eval方式来执行。但是如果是比较复杂的代码用eval的话 提供的信息就不太完整就不会太推荐
+
+  // 如果仅是source-map 就会在打包文件里生成一个 main.js.map 文件
+
+  // 最佳source-map实践：
+  // 在开发环境(development)中使用source-map： eval-cheap-module-source-map   // 提示比较全面，打包速度也挺快
+  // 在线上环境(production)中使用source-map： cheap-module-source-map
+
+  devtool: 'eval-cheap-module-source-map',
   entry: {
-    main: './src/index.js',
-    sub: './src/index2.js'
+    main: './src/index.js'
   },
   output: {
-    // 这让所有文件的文件名前都对应有cdn地址  具体内容 看看文档的output部分
-    publicPath: 'http://cdn.com.cn',
-    // 对于多入口文件，最后打包出的文件，这里可以通过placeholder来控制打包出来的文件名是什么
-    filename: '[name]_[hash].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: '[name].[ext]'
   },
