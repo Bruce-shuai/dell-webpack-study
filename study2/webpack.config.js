@@ -10,24 +10,14 @@ module.exports = {
     assetModuleFilename: '[name].[ext]'
   },
   module: {
-  //  rules: [
-  //    {
-  //     //  test: /\.png/,
-  //     test: /\.(jpg|png|gif)$/,  // 打包更多的文件
-  //     type: 'asset/resource',
-  //     generator: {
-  //       filename: 'static/[hash][ext][query]'
-  //     }
-  //    }
-  //  ]
   rules: [
     {
-    // 这个比以前的url-loader和file-loader更厉害
-     test: /\.(jpg|png|gif)$/,  
+    // 允许使用iconfont了 ttf, 但是要注意一个问题。在css module的情况下是不能使用import './...css' 这种导入方法的。所以如果要引入字体文件 非css module方法。则应先关闭css module
+     test: /\.(jpg|png|gif|ttf)$/,  
      type: 'asset',
      parser: {
         dataUrlCondition: {
-          maxSize: 124 * 1024 // 124kb
+          maxSize: 8 * 1024 // 8kb
         }
       }
     }, {
@@ -35,7 +25,6 @@ module.exports = {
         use: ["style-loader", "css-loader"],
     }, {
         test: /\.s[ac]ss$/i,
-        // 对style-loader的常用知识点进行补充
         use: [
           "style-loader",
           {
@@ -44,8 +33,6 @@ module.exports = {
               // 表示在执行css-loader 前 还应执行前面多少个(此设置为2)loader。防止有些特殊情况 部分loader会有没被执行的情况
               importLoaders: 2,
               // css modules 的效果是不再让传统的css文件全局有效这种情况。转变为 css文件的效果只在当前模块起作用
-              modules: true,   // 引用css文件的方法变为：import style from './ ...css'
-              // 使用webpack打包字体文件
             }
           },
           // Compiles Sass to CSS
