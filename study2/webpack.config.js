@@ -27,24 +27,27 @@ module.exports = {
      type: 'asset',
      parser: {
         dataUrlCondition: {
-          // 如果指定的文件小于124kb 会被转化为base64 字符串 直接放在dist/main.js里，而不会单独生成一个文件
-          // 事实上 如果文件小(一般是8kb以下) 变成base64 放在 文件里 很好，打开main.js 就可看见图片。但如果是太大文件，为了防止
-          // 加载文件太慢，还是作为一个新的文件为妙(尽管会多发送一次http请求)
           maxSize: 124 * 1024 // 124kb
         }
       }
     }, {
       test: /\.css$/i,
-        // css-loader 的作用在于 分析几个css文件的关系(css文件之间用@import来找的关系)，最终合成一个css文件
-        // style-loader 会把 通过css-loader 生成的内容挂载到页面上的header部分
         use: ["style-loader", "css-loader"],
     }, {
         test: /\.s[ac]ss$/i,
+        // 对style-loader的常用知识点进行补充
         use: [
-          // Creates `style` nodes from JS strings
           "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              // 表示在执行css-loader 前 还应执行前面多少个(此设置为2)loader。防止有些特殊情况 部分loader会有没被执行的情况
+              importLoaders: 2,
+              // css modules 的效果是不再让传统的css文件全局有效这种情况。转变为 css文件的效果只在当前模块起作用
+              modules: true,   // 引用css文件的方法变为：import style from './ ...css'
+              // 使用webpack打包字体文件
+            }
+          },
           // Compiles Sass to CSS
           "sass-loader"
         , {
