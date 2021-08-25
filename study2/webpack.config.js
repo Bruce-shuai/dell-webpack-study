@@ -33,6 +33,37 @@ module.exports = {
           maxSize: 124 * 1024 // 124kb
         }
       }
+    }, {
+      test: /\.css$/i,
+        // css-loader 的作用在于 分析几个css文件的关系(css文件之间用@import来找的关系)，最终合成一个css文件
+        // style-loader 会把 通过css-loader 生成的内容挂载到页面上的header部分
+        use: ["style-loader", "css-loader"],
+    }, {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader"
+        , {
+            // 自动添加厂商前缀 
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
+            },
+          }
+        ]
     }
   ]
  },
