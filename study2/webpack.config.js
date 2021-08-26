@@ -3,10 +3,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-// babel 专栏
-// babel-loader 是 babel 和 webpack做通信的桥梁。但事实上，babel-loader并不会帮助你把es6语法转化为es5语法
-// 需要借助其他的模块来帮助我们解决翻译es6到es5 的问题 。所以安装 @babel/preset-env
-
 
 module.exports = {
   
