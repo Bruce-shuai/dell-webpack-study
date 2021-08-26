@@ -1,15 +1,21 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
-// 使用webpack dev server来提高开发效率(避免总是手动在CLI里输入 npm run build,以及手动打开打包后的html文件)
-// 实现上述功能  3种方法  webpack文档有详细介绍  最适合第二种，第一种过于简单而且功能偏弱。第三种跟nodejs相关，且配置比较的复杂
-// 方法1： "watch": "webpack --watch"  运行的时候是 npm run watch  即可达到自动监听文件变化后的效果 (避免再次手动在cli里输入npm run ...)
-// 方法2：具体操作 文档有！  方法2 不仅避免文件进行修改后总是 手动 npm run ... 还能自动打开打包后的html文件, 并且修改的文件内容，不需要手动刷新网页(人家自动帮我们刷新网页)就可以呈现在页面上。并且拥有服务器的一些功能
-// 因为有了一些服务器功能(具备http协议)，就可以发送ajax请求了(原本是file://开头，而非http开头)
-// 这里就可以联想到人家react 也是通过webpack dev server来进行操作的
-// 关于devserver 更多的细节  webpack的devserver专栏有很多内容值得一看
-// 方法3：middleware的内容，不太想了解...省略
+
+// webpack 的插件
+
+
+// Hot Module Replacement 热模块更新
+// 使用webpack dev server 打包的文件不会放在目录上，而是隐藏在电脑内存里，这样能有效提高打包的速度，让我们开发得更快
+// HotModuleReplacementPlugin 这个插件 搭配 热更新 挺厉害的 
+
+// HMR 能够实现局部模块更新而不影响整个页面内容(不会整个页面刷新)
+
+// 注意一个问题  引入 CSS 文件，hmr直接能带来热更新效果。而如果是JS文件，就需要先使用 if(module.hot) 这种自己来进行一定的配置。
+// 原因是在css-loader 里自动配置了 module.hot 所以不用自己再去配置。 react 是借助了一些 babel percet。 babel percet 里面也会内置一些这样的配置。 
+// 所以要知道，使用hmr其实都是要配置if (module.hot) 这样的东西。只是有些地方自动提供了这些东西。所以，想要自己配置hmr效果， if(module.hot)这样的配置需要自己来弄！
 
 module.exports = {
   
@@ -17,9 +23,10 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     static: './dist',
+    hot: true
   },
   entry: {
-    main: './src/index.js'
+    main: "./src/index.js"
   },
   output: {
     filename: '[name].js',
@@ -28,7 +35,10 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/template-html.html'
-  }), new CleanWebpackPlugin()],
+  }), new CleanWebpackPlugin(),
+  // 开启HMR 功能 似乎这个插件不用也可以
+  new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
   rules: [
     {
