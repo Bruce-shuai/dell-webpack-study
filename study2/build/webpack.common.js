@@ -5,16 +5,6 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  
-  mode: 'development',
-  optimization: {
-    usedExports: true,
-  },
-  devtool: 'eval-cheap-module-source-map',
-  devServer: {
-    static: './dist',
-    hot: true
-  },
   entry: {
     main: "./src/index.js"
   },
@@ -25,9 +15,7 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/template-html.html'
-  }), new CleanWebpackPlugin(),
-  // 开启HMR 功能 似乎这个插件不用也可以
-  new webpack.HotModuleReplacementPlugin()
+  }), new CleanWebpackPlugin()
   ],
   module: {
   rules: [
