@@ -1,6 +1,0 @@
-div:nth-of-type(odd) {
-  /* background: yellow; */
-  /* 鸭血 webpack5 dev server 似乎自带 HMR, 颜色更改后，曾经的内容不会变？？ */
-  background: blue;
-  color: #fff;
-}
