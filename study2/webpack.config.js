@@ -7,6 +7,9 @@ const webpack = require('webpack');
 module.exports = {
   
   mode: 'development',
+  optimization: {
+    usedExports: true,
+  },
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     static: './dist',

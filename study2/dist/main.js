@@ -35,10 +35,21 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"./node_modules/core-js/es6/in
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/polyfill */ \"./node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n // Tree Shaking 只支持ES Module(即import export  需要静态引入方式)\n// 这里只想导出 add 方法， minus 方法不想导出。所以就用Tree Shaking把模块里没用的东西“摇晃掉” \n// 所以，如果采用了 Tree Shaking ,则 {} 包裹的add方法能够被导出来，而 {} 之外的就被摇晃掉！！ 估计平时在react中，人家也是这样来处理的！\n// 但是为了防止tree shaking 对例如下面的css 导入： import './...css'有影响。所以用如下的方法来进行修改：\n// package.json 文件的 \"sideEffects\": false --> 修改为 --> \"sideEffects\": [\"*.css\"]\n\n\n(0,_math_js__WEBPACK_IMPORTED_MODULE_1__.add)(1, 2);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7QUFLQTtBQUNBO0FBQ0E7QUFDQTs7QUFDQTtBQUVBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc3R1ZHkyLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiQGJhYmVsL3BvbHlmaWxsXCI7XG5cbi8vIFRyZWUgU2hha2luZyDlj6rmlK/mjIFFUyBNb2R1bGUo5Y2zaW1wb3J0IGV4cG9ydCAg6ZyA6KaB6Z2Z5oCB5byV5YWl5pa55byPKVxuXG5cbi8vIOi/memHjOWPquaDs+WvvOWHuiBhZGQg5pa55rOV77yMIG1pbnVzIOaWueazleS4jeaDs+WvvOWHuuOAguaJgOS7peWwseeUqFRyZWUgU2hha2luZ+aKiuaooeWdl+mHjOayoeeUqOeahOS4nOilv+KAnOaRh+aZg+aOieKAnSBcbi8vIOaJgOS7pe+8jOWmguaenOmHh+eUqOS6hiBUcmVlIFNoYWtpbmcgLOWImSB7fSDljIXoo7nnmoRhZGTmlrnms5Xog73lpJ/ooqvlr7zlh7rmnaXvvIzogIwge30g5LmL5aSW55qE5bCx6KKr5pGH5pmD5o6J77yB77yBIOS8sOiuoeW5s+aXtuWcqHJlYWN05Lit77yM5Lq65a625Lmf5piv6L+Z5qC35p2l5aSE55CG55qE77yBXG4vLyDkvYbmmK/kuLrkuobpmLLmraJ0cmVlIHNoYWtpbmcg5a+55L6L5aaC5LiL6Z2i55qEY3NzIOWvvOWFpe+8miBpbXBvcnQgJy4vLi4uY3NzJ+acieW9seWTjeOAguaJgOS7peeUqOWmguS4i+eahOaWueazleadpei/m+ihjOS/ruaUue+8mlxuLy8gcGFja2FnZS5qc29uIOaWh+S7tueahCBcInNpZGVFZmZlY3RzXCI6IGZhbHNlIC0tPiDkv67mlLnkuLogLS0+IFwic2lkZUVmZmVjdHNcIjogW1wiKi5jc3NcIl1cbmltcG9ydCB7IGFkZCB9IGZyb20gJy4vbWF0aC5qcyc7XG5cbmFkZCgxLCAyKSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+
+/***/ }),
+
+/***/ "./src/math.js":
+/*!*********************!*\
+  !*** ./src/math.js ***!
+  \*********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/polyfill */ \"./node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_0__);\n // 来一个es6语法，让更多浏览器支持es6的语法(不单单是限于chrome这种先进的浏览器)\n// babel 让 es6的语法 变为了 es5语法 \n// babel的知识点 还是看 babel官网的为妙   babel官网 --> Setup --> 选择webpack\n// 可以通过 在cli里输入 npx webpack 看在dist目录下的main.js 文件  通过搜索关键字eval \n// 来查看eval里的代码(即当前index.js文件的代码)是否被转化为es5的内容\n// 但是还是要注意一个问题，即使转化为es5的代码  仍会有 Promise 函数、map语法... 在低版本的垃圾浏览器里(这里我可没说是IE)仍然不太支持，这时候不仅\n// 要用preset-env做语法解析。还要把一些缺失的变量和函数补充到翻译后的代码里去，这时就需要 Babel-Polyfill \n// babel-polyfill 查询方法： Babel 官网  --> Docs  --> 左侧 polyfill\n// 注意： 使用了 babel-polyfill 后，一个文件的内容会变得很大(因为也补充了不少的内容)，所以要控制文件的大小，需要用到polyfill的某部分内容，才会启动某部分内容\n// 而不是全部都弄出来 方法：useBuiltIns: 'usage'  具体操作 文档 和 该项目的babel.config.json文件的内容\n\nvar arr = [new Promise(function () {}), new Promise(function () {})];\narr.map(function (item) {\n  console.log(item);\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBR0E7QUFLQTtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zdHVkeTIvLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgXCJAYmFiZWwvcG9seWZpbGxcIjtcblxuLy8g5p2l5LiA5LiqZXM26K+t5rOV77yM6K6p5pu05aSa5rWP6KeI5Zmo5pSv5oyBZXM255qE6K+t5rOVKOS4jeWNleWNleaYr+mZkOS6jmNocm9tZei/meenjeWFiOi/m+eahOa1j+iniOWZqClcbi8vIGJhYmVsIOiuqSBlczbnmoTor63ms5Ug5Y+Y5Li65LqGIGVzNeivreazlSBcbi8vIGJhYmVs55qE55+l6K+G54K5IOi/mOaYr+eciyBiYWJlbOWumOe9keeahOS4uuWmmSAgIGJhYmVs5a6Y572RIC0tPiBTZXR1cCAtLT4g6YCJ5oupd2VicGFja1xuLy8g5Y+v5Lul6YCa6L+HIOWcqGNsaemHjOi+k+WFpSBucHggd2VicGFjayDnnIvlnKhkaXN055uu5b2V5LiL55qEbWFpbi5qcyDmlofku7YgIOmAmui/h+aQnOe0ouWFs+mUruWtl2V2YWwgXG4vLyDmnaXmn6XnnItldmFs6YeM55qE5Luj56CBKOWNs+W9k+WJjWluZGV4Lmpz5paH5Lu255qE5Luj56CBKeaYr+WQpuiiq+i9rOWMluS4umVzNeeahOWGheWuuVxuLy8g5L2G5piv6L+Y5piv6KaB5rOo5oSP5LiA5Liq6Zeu6aKY77yM5Y2z5L2/6L2s5YyW5Li6ZXM155qE5Luj56CBICDku43kvJrmnIkgUHJvbWlzZSDlh73mlbDjgIFtYXDor63ms5UuLi4g5Zyo5L2O54mI5pys55qE5Z6D5Zy+5rWP6KeI5Zmo6YeMKOi/memHjOaIkeWPr+ayoeivtOaYr0lFKeS7jeeEtuS4jeWkquaUr+aMge+8jOi/meaXtuWAmeS4jeS7hVxuLy8g6KaB55SocHJlc2V0LWVuduWBmuivreazleino+aekOOAgui/mOimgeaKiuS4gOS6m+e8uuWkseeahOWPmOmHj+WSjOWHveaVsOihpeWFheWIsOe/u+ivkeWQjueahOS7o+eggemHjOWOu++8jOi/meaXtuWwsemcgOimgSBCYWJlbC1Qb2x5ZmlsbCBcbi8vIGJhYmVsLXBvbHlmaWxsIOafpeivouaWueazle+8miBCYWJlbCDlrpjnvZEgIC0tPiBEb2NzICAtLT4g5bem5L6nIHBvbHlmaWxsXG4vLyDms6jmhI/vvJog5L2/55So5LqGIGJhYmVsLXBvbHlmaWxsIOWQju+8jOS4gOS4quaWh+S7tueahOWGheWuueS8muWPmOW+l+W+iOWkpyjlm6DkuLrkuZ/ooaXlhYXkuobkuI3lsJHnmoTlhoXlrrkp77yM5omA5Lul6KaB5o6n5Yi25paH5Lu255qE5aSn5bCP77yM6ZyA6KaB55So5YiwcG9seWZpbGznmoTmn5Dpg6jliIblhoXlrrnvvIzmiY3kvJrlkK/liqjmn5Dpg6jliIblhoXlrrlcbi8vIOiAjOS4jeaYr+WFqOmDqOmDveW8hOWHuuadpSDmlrnms5XvvJp1c2VCdWlsdEluczogJ3VzYWdlJyAg5YW35L2T5pON5L2cIOaWh+ahoyDlkowg6K+l6aG555uu55qEYmFiZWwuY29uZmlnLmpzb27mlofku7bnmoTlhoXlrrlcblxuXG5jb25zdCBhcnIgPSBbXG4gIG5ldyBQcm9taXNlKCgpID0+IHt9KSxcbiAgbmV3IFByb21pc2UoKCkgPT4ge30pXG5dO1xuXG5hcnIubWFwKGl0ZW0gPT4ge1xuICBjb25zb2xlLmxvZyhpdGVtKTtcbn0pIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": function() { return /* binding */ add; }\n/* harmony export */ });\n/* unused harmony export minus */\nvar add = function add(a, b) {\n  console.log('a + b = ', a + b);\n};\nvar minus = function minus(a, b) {\n  console.log('a - b = ', a - b);\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWF0aC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7O0FBQUE7QUFDQTtBQUNBO0FBRUE7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc3R1ZHkyLy4vc3JjL21hdGguanM/NWEwMyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgYWRkID0gKGEsIGIpID0+IHtcbiAgY29uc29sZS5sb2coJ2EgKyBiID0gJywgYSArIGIpO1xufVxuXG5leHBvcnQgY29uc3QgbWludXMgPSAoYSwgYikgPT4ge1xuICBjb25zb2xlLmxvZygnYSAtIGIgPSAnLCBhIC0gYik7XG59Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/math.js\n");
 
 /***/ }),
 
@@ -3265,7 +3276,7 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "c5f94005fa0fc2e60c0d"; }
+/******/ 		__webpack_require__.h = function() { return "7b294d622308c5218d1c"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -3328,17 +3339,6 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
 /******/ 	
