@@ -1,17 +1,27 @@
-import "@babel/polyfill";
+import _ from 'lodash';   
 
-// Development 和 Production 模式的区分打包
-// 二者主要区别如下：
-// 1. 在开发环境中  source map是非常全面的，可以帮助我们在开发环境下快速定位问题
-// 而在Production环境中，source map的作用就没那么大了，所以source map的配置就会相对更加简洁一些
-// 2. 在开发环境下，打包后的代码一般不需要进行压缩，但是一旦代码要上线，我们希望代码可以被压缩，所以production模式下
-// 代码是要被压缩的。上线的配置 甚至是不需要devserver的。因为自己本身就会有一个服务器
+// 首先 不再用 clearWebpackPlugin 这个插件了  因为webpack5 有更优秀更简单的方法
+// Code Splitting 代码分割
+// 先安装一个lodash  npm install loadsh --save
 
-// 由于开发环境下的webpack config文件和上线环境的config的配置不一样。所以解决方法是设置3个config文件
-// 分别是 webpack.dev.js(开发环境)  webpack.prod.js(上线)  webpack.common.js(开发和生产环境都有的共用内容)
-// 想要三者文件合并  需要第三方模块: npm install webpack-merge -D 
+// 字符串连接效果
+console.log(_.join(['a', 'b', 'c'], '***'));
+// 此处省略10万行业务逻辑
 
-// npm run build   --> build 一般是生成线上代码的指令
-// 所以我之前使用 react的时候  执行 npm run build 就会出现打包文件夹 dist
+// 会带来一个潜在问题  
+// 比如 loadsh 有1mb 大小，我的业务逻辑 有1mb大小 打包的文件就是2mb
+// 打包文件会很大，加载时间会长
+// 如果修改了业务代码，用户又要重新刷新这2mb的内容...
+// 解决方法： 把lodash 挂载到全局window
 
-console.log('看看三个文件的配置是否成功了')
+// 浏览器可以并行加载文件 (一个2mb的文件的加载时间 高度 2个1mb的文件的加载时间 ，尽管不是绝对的)
+// 当页面业务逻辑发生变化时，只要加载main.js 即可(lodash文件不需要再加载，因为已经放在浏览器缓存里面了)
+
+// Code Splitting  通过对代码进行拆分 来 提升代码的性能
+// 尽管Code Splitting 这个概念不是有webpack提出来的。但现在webpack与code spliting 已经密不可分了
+// 因为 webpack 有非常多的插件能够帮助我们实现Code Splitting
+// webpack 的插件能让我们不用自己进行手动代码分割
+// 人家 自动帮助我们打包了 一个vendors-node..文件来放置公共内容  运行 npm run dev-build
+
+// 代码分割有两种方式： 同步代码 和 异步加载代码分割
+// 直接在webpack官网查如何实现

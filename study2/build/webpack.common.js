@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
+// 这里的相关内容可以看看 webpack文档的production部分
 
 module.exports = {
   entry: {
@@ -10,12 +10,18 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
+    clean: true,
     assetModuleFilename: '[name].[ext]'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/template-html.html'
-  }), new CleanWebpackPlugin()
+  })
   ],
   module: {
   rules: [
