@@ -7,16 +7,15 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n // 首先 不再用 clearWebpackPlugin 这个插件了  因为webpack5 有更优秀更简单的方法\n// Code Splitting 代码分割\n// 先安装一个lodash  npm install loadsh --save\n// 字符串连接效果\n\nconsole.log(lodash__WEBPACK_IMPORTED_MODULE_0___default().join(['a', 'b', 'c'], '***')); // 此处省略10万行业务逻辑\n// 会带来一个潜在问题  \n// 比如 loadsh 有1mb 大小，我的业务逻辑 有1mb大小 打包的文件就是2mb\n// 打包文件会很大，加载时间会长\n// 如果修改了业务代码，用户又要重新刷新这2mb的内容...\n// 解决方法： 把lodash 挂载到全局window\n// 浏览器可以并行加载文件 (一个2mb的文件的加载时间 高度 2个1mb的文件的加载时间 ，尽管不是绝对的)\n// 当页面业务逻辑发生变化时，只要加载main.js 即可(lodash文件不需要再加载，因为已经放在浏览器缓存里面了)\n// Code Splitting  通过对代码进行拆分 来 提升代码的性能\n// webpack 有非常多的插件能够帮助我们实现Code Splitting\n// webpack 的插件能让我们不用自己进行手动代码分割//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6Ijs7QUFBQTtBQUdBO0FBQ0E7QUFFQTs7QUFDQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBRUE7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc3R1ZHkyLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IF8gZnJvbSAnbG9kYXNoJzsgICBcblxuLy8g6aaW5YWIIOS4jeWGjeeUqCBjbGVhcldlYnBhY2tQbHVnaW4g6L+Z5Liq5o+S5Lu25LqGICDlm6DkuLp3ZWJwYWNrNSDmnInmm7TkvJjnp4Dmm7TnroDljZXnmoTmlrnms5Vcbi8vIENvZGUgU3BsaXR0aW5nIOS7o+eggeWIhuWJslxuLy8g5YWI5a6J6KOF5LiA5LiqbG9kYXNoICBucG0gaW5zdGFsbCBsb2Fkc2ggLS1zYXZlXG5cbi8vIOWtl+espuS4sui/nuaOpeaViOaenFxuY29uc29sZS5sb2coXy5qb2luKFsnYScsICdiJywgJ2MnXSwgJyoqKicpKTtcbi8vIOatpOWkhOecgeeVpTEw5LiH6KGM5Lia5Yqh6YC76L6RXG5cbi8vIOS8muW4puadpeS4gOS4qua9nOWcqOmXrumimCAgXG4vLyDmr5TlpoIgbG9hZHNoIOaciTFtYiDlpKflsI/vvIzmiJHnmoTkuJrliqHpgLvovpEg5pyJMW1i5aSn5bCPIOaJk+WMheeahOaWh+S7tuWwseaYrzJtYlxuLy8g5omT5YyF5paH5Lu25Lya5b6I5aSn77yM5Yqg6L295pe26Ze05Lya6ZW/XG4vLyDlpoLmnpzkv67mlLnkuobkuJrliqHku6PnoIHvvIznlKjmiLflj4jopoHph43mlrDliLfmlrDov5kybWLnmoTlhoXlrrkuLi5cbi8vIOino+WGs+aWueazle+8miDmiopsb2Rhc2gg5oyC6L295Yiw5YWo5bGAd2luZG93XG5cbi8vIOa1j+iniOWZqOWPr+S7peW5tuihjOWKoOi9veaWh+S7tiAo5LiA5LiqMm1i55qE5paH5Lu255qE5Yqg6L295pe26Ze0IOmrmOW6piAy5LiqMW1i55qE5paH5Lu255qE5Yqg6L295pe26Ze0IO+8jOWwveeuoeS4jeaYr+e7neWvueeahClcbi8vIOW9k+mhtemdouS4muWKoemAu+i+keWPkeeUn+WPmOWMluaXtu+8jOWPquimgeWKoOi9vW1haW4uanMg5Y2z5Y+vKGxvZGFzaOaWh+S7tuS4jemcgOimgeWGjeWKoOi9ve+8jOWboOS4uuW3sue7j+aUvuWcqOa1j+iniOWZqOe8k+WtmOmHjOmdouS6hilcblxuLy8gQ29kZSBTcGxpdHRpbmcgIOmAmui/h+WvueS7o+eggei/m+ihjOaLhuWIhiDmnaUg5o+Q5Y2H5Luj56CB55qE5oCn6IO9XG4vLyB3ZWJwYWNrIOaciemdnuW4uOWkmueahOaPkuS7tuiDveWkn+W4ruWKqeaIkeS7rOWunueOsENvZGUgU3BsaXR0aW5nXG4vLyB3ZWJwYWNrIOeahOaPkuS7tuiDveiuqeaIkeS7rOS4jeeUqOiHquW3sei/m+ihjOaJi+WKqOS7o+eggeWIhuWJsiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("// import _ from 'lodash';\n// var element = document.createElement('div');\n// element.innerHTML = _.join(['Dell', 'Lee'], '-');\n// document.body.appendChild(element);\n// 下面这种操作可以实现懒加载的行为  -->  懒加载的意思是，一开始不全部加载(只把当前需要的内容加载出来)，后续 需要加载某些文件的时候才会加载某些文件\n// 因此 下面这种import 语法 是 可以实现懒加载的效果的\n// react 中的路由概念，路由切换就是使用了懒加载的概念(先每种页面进行代码分割即Code Spliting 然后通过异步组件的形式 将对应的代码载入进来就行了，这样会让速度提升) \n// 懒加载 实质上是 es 里提出的概念(用import语法来体现)\nfunction getComponent() {\n  return __webpack_require__.e(/*! import() | lodash */ \"lodash\").then(__webpack_require__.t.bind(__webpack_require__, /*! lodash */ \"./node_modules/lodash/lodash.js\", 23)).then(function (_ref) {\n    var _ = _ref.default;\n    var element = document.createElement('div');\n    element.innerHTML = _.join(['Dell', 'Lee'], '-');\n    return element;\n  });\n}\n\ndocument.addEventListener('click', function () {\n  getComponent().then(function (element) {\n    document.body.appendChild(element);\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6IkFBQUE7QUFFQTtBQUNBO0FBQ0E7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3N0dWR5Mi8uL3NyYy9pbmRleC5qcz9iNjM1Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGltcG9ydCBfIGZyb20gJ2xvZGFzaCc7XG5cbi8vIHZhciBlbGVtZW50ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG4vLyBlbGVtZW50LmlubmVySFRNTCA9IF8uam9pbihbJ0RlbGwnLCAnTGVlJ10sICctJyk7XG4vLyBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGVsZW1lbnQpO1xuXG5cbi8vIOS4i+mdoui/meenjeaTjeS9nOWPr+S7peWunueOsOaHkuWKoOi9veeahOihjOS4uiAgLS0+ICDmh5LliqDovb3nmoTmhI/mgJ3mmK/vvIzkuIDlvIDlp4vkuI3lhajpg6jliqDovb0o5Y+q5oqK5b2T5YmN6ZyA6KaB55qE5YaF5a655Yqg6L295Ye65p2lKe+8jOWQjue7rSDpnIDopoHliqDovb3mn5Dkupvmlofku7bnmoTml7blgJnmiY3kvJrliqDovb3mn5Dkupvmlofku7Zcbi8vIOWboOatpCDkuIvpnaLov5nnp41pbXBvcnQg6K+t5rOVIOaYryDlj6/ku6Xlrp7njrDmh5LliqDovb3nmoTmlYjmnpznmoRcbi8vIHJlYWN0IOS4reeahOi3r+eUseamguW/te+8jOi3r+eUseWIh+aNouWwseaYr+S9v+eUqOS6huaHkuWKoOi9veeahOamguW/tSjlhYjmr4/np43pobXpnaLov5vooYzku6PnoIHliIblibLljbNDb2RlIFNwbGl0aW5nIOeEtuWQjumAmui/h+W8guatpee7hOS7tueahOW9ouW8jyDlsIblr7nlupTnmoTku6PnoIHovb3lhaXov5vmnaXlsLHooYzkuobvvIzov5nmoLfkvJrorqnpgJ/luqbmj5DljYcpIFxuLy8g5oeS5Yqg6L29IOWunui0qOS4iuaYryBlcyDph4zmj5Dlh7rnmoTmpoLlv7Uo55SoaW1wb3J06K+t5rOV5p2l5L2T546wKVxuZnVuY3Rpb24gZ2V0Q29tcG9uZW50KCkge1xuICByZXR1cm4gaW1wb3J0KC8qIHdlYnBhY2tDaHVua05hbWU6XCJsb2Rhc2hcIiAqLydsb2Rhc2gnKS50aGVuKCh7ZGVmYXVsdDpffSkgPT57XG4gICAgdmFyIGVsZW1lbnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICBlbGVtZW50LmlubmVySFRNTCA9IF8uam9pbihbJ0RlbGwnLCAnTGVlJ10sICctJyk7XG4gICAgcmV0dXJuIGVsZW1lbnQ7XG4gIH0pXG59XG5cblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiB7XG4gIGdldENvbXBvbmVudCgpLnRoZW4oZWxlbWVudCA9PiB7XG4gICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChlbGVtZW50KTtcbiAgfSlcbn0pIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ })
 
@@ -68,49 +67,33 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 	__webpack_require__.i = [];
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	!function() {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = function(result, chunkIds, fn, priority) {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
+/******/ 		var getProto = Object.getPrototypeOf ? function(obj) { return Object.getPrototypeOf(obj); } : function(obj) { return obj.__proto__; };
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
 /******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var chunkIds = deferred[i][0];
-/******/ 				var fn = deferred[i][1];
-/******/ 				var priority = deferred[i][2];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every(function(key) { return __webpack_require__.O[key](chunkIds[j]); })) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach(function(key) { def[key] = function() { return value[key]; }; });
 /******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
+/******/ 			def['default'] = function() { return value; };
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -123,6 +106,28 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	!function() {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = function(chunkId) {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce(function(promises, key) {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	!function() {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = function(chunkId) {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -142,7 +147,7 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "75451480c3231625d996"; }
+/******/ 		__webpack_require__.h = function() { return "a4b2a5a2b8d9a1db9d7d"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -205,6 +210,17 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -627,7 +643,44 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 			"main": 0
 /******/ 		};
 /******/ 		
-/******/ 		// no chunk on demand loading
+/******/ 		__webpack_require__.f.j = function(chunkId, promises) {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = function(event) {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		
@@ -1124,7 +1177,7 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 			});
 /******/ 		};
 /******/ 		
-/******/ 		__webpack_require__.O.j = function(chunkId) { return installedChunks[chunkId] === 0; };
+/******/ 		// no on chunks loaded
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
@@ -1150,7 +1203,7 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			return __webpack_require__.O(result);
+/******/ 		
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunkstudy2"] = self["webpackChunkstudy2"] || [];
@@ -1163,8 +1216,7 @@ eval("/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_r
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_lodash_lodash_js"], function() { return __webpack_require__("./src/index.js"); })
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
 /******/ 	
 /******/ })()
 ;
