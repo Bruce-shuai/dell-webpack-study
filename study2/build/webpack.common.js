@@ -15,6 +15,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name].[ext]'
   },
+  // 帮助我们自动进行代码分割(Code Splitting)
   optimization: {
     splitChunks: {
       chunks: 'all',
