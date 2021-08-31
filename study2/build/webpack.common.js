@@ -10,9 +10,9 @@ module.exports = {
     main: "./src/index.js"
   },
   output: {
-    filename: '[name].js',   // 入口文件 走这个名字
+    filename: '[name].[contenthash].js',   // 入口文件 走这个名字
     path: path.resolve(__dirname, '../dist'),
-    chunkFilename: '[name].chunk.js',
+    chunkFilename: '[name].[contenthash].js',
     clean: true,
     assetModuleFilename: '[name].[ext]'   // 间接的js文件(在html文件里没有直接被引入的js文件)走这个名字
   },
