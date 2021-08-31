@@ -2,8 +2,11 @@ import _ from 'lodash';
 import $ from 'jquery';
 
 const dom = $('<div>');
-dom.html(_.join(['dell', 'leeeeeelll']), '-----')
+dom.html(_.join(['dell', 'leeeeeelll'], '-----')
 $('body').append(dom);
 
-// Webpack 与 浏览器缓存(Caching)
-// contenthash 这个是真牛逼 这里可以联想到双越视频 的 浏览器缓存 以及人家提到过的 contenthash + webpack
+// Shimming 的作用 --> 解决webpack打包过程中的兼容问题  比如 polyfill
+// ProvidePlugin
+
+
+// 环境变量的使用: 看看文档哪里有这个讲解
