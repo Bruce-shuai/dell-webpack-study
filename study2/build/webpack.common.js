@@ -10,10 +10,11 @@ module.exports = {
     main: "./src/index.js"
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].js',   // 入口文件 走这个名字
     path: path.resolve(__dirname, '../dist'),
+    chunkFilename: '[name].chunk.js',
     clean: true,
-    assetModuleFilename: '[name].[ext]'
+    assetModuleFilename: '[name].[ext]'   // 间接的js文件(在html文件里没有直接被引入的js文件)走这个名字
   },
   // 帮助我们自动进行代码分割(Code Splitting)
   optimization: {
@@ -23,7 +24,12 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/template-html.html'
-  }),new MiniCssExtractPlugin()
+  }),new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].[hash].css",   /* 如果一个文件会被html直接引用 就走filename，不然走chunkFilename*/ 
+      chunkFilename: "[id].css",
+    })
   ],
   module: {
   rules: [
