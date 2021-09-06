@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open --config build-splitconfig/webpack.dev.js",
-    "build": "webpack --config build-splitconfig/webpack.prod.js"
+    "start": "webpack serve --open --config build-muliti-page/webpack.dev.js",
+    "build": "webpack --config build-muliti-page/webpack.prod.js"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("sumRes",30),console.log("other page")})();
