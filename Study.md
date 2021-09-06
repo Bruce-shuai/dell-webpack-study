@@ -1,5 +1,7 @@
 #### 前人的 webpack 笔记：https://github.com/Bruce-shuai/Nineteen-webpack?organization=Bruce-shuai&organization=Bruce-shuai#1
 
+如果要复习 webpack: 结合这篇笔记 + 上面这篇老哥的笔记 + webpack 的官方文档(已经看过很多次了，所以再看就更容易理解)
+
 ### Webpack 是什么？
 
 (在 Webpack 出现之前，我们写网页的方法 html 文件 --> 在 html 网页里增添样式 link 标签, 以及 js 文件 使用 script 标签)
@@ -228,6 +230,8 @@ module.exports = {
 }
 ```
 
+##### 注意： webpack5 没有了 file-loader 而是以 Asset Modules 来取代(当然也可以就用 file-loader 但是要添加一些东西，在 Webpack 文档里有说明)
+
 通过 webpack 打包后，在 dist 目录下 .jpg 文件 的名字变为了一串”乱码“
 
 执行过程： 首先 执行 npm run bundle (实质是在执行 package.json 文件中 scripts 里的"bundle":"webpack" 这个时候，webpack 会去找它的配置文件(webpack.config.js)来帮助打包， 如果遇见 js 文件，那么 webpack 本身就知道该如何去打包，如果遇见其他类型的文件打包，应该在 webpack 配置文件中告诉 webpack 该如何打包对应的文件， 比如遇见.jpg 文件，那么 webpack 就会去求助于 file-loader(需提前下载)来打包)
@@ -357,3 +361,9 @@ webpack devServer 支持跨域的代理
 #### Webpack 在性能优化这个版块做实需要做很多东西才行
 
 #### 配置 React 代码的打包
+
+#### Tree Shaking
+
+---
+
+stydy2 文件的内容结合 webpack 的文档(坚持看英文) 把所学内容尽量升级到 webpack5

@@ -47,7 +47,7 @@
 - 处理 ES6 「babel」
 - 处理样式 「style-loader、css-loader、postcss-loader、less-loader」
 - 处理图片
-- 模块化
+- 模块化 (浏览器是不支持模块化的。要使用模块化还必须要引入 webpack 才行)
 
 ---
 
